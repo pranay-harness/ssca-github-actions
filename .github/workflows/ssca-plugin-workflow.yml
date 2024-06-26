@@ -1,0 +1,35 @@
+name: SSCA Plugin Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-ssca-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run SSCA Plugin Action
+        uses: ./ # Uses the action in the root directory of the repository
+        with:
+          HARNESS_EXECUTION_ID: '123'
+          HARNESS_ACCOUNT_ID: '123'
+          HARNESS_STAGE_ID: '123'
+          HARNESS_BUILD_ID: '123'
+          HARNESS_PIPELINE_ID: '123'
+          HARNESS_PROJECT_ID: '123'
+          PLUGIN_TOOL: 'Syft'
+          PLUGIN_FORMAT: 'SPDX'
+          PLUGIN_SBOMSOURCE: '/harness/repo'
+          PLUGIN_SBOMDESTINATION: '/harness/sbom'
+          SSCA_SERVICE_Endpoint: 'localhost:8186'
+          SSCA_SERVICE_TOKEN: '123'
+          PLUGIN_TYPE: 'Orchestrate'
+          ATTEST_SBOM: true
+          COSIGN_PASSWORD: '123'
