@@ -39,8 +39,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'harness/ssca-plugin:github'
-  entrypoint:
-    - /bin/ssca-plugin
+  args:
     - github-orchestrate
   env:
     HARNESS_ACCOUNT_URL: ${{ inputs.HARNESS_ACCOUNT_URL }}
