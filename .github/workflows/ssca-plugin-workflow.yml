@@ -29,3 +29,4 @@ jobs:
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
           TARGET: 'reetika1999/ssca-manager:latest'
+          
