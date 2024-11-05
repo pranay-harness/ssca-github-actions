@@ -19,6 +19,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Log in to Vault
+        uses: hashicorp/vault-action@v2
+        with:
+          url: ${{ secrets.VAULT_URL }}  # Your Vault URL
+          method: token
+          token: ${{ secrets.VAULT_TOKEN }}  # Your Vault token
       - name: Run SSCA Plugin Action
         uses: ./ # Uses the action in the root directory of the repository
         with:
@@ -29,4 +35,6 @@ jobs:
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
           TARGET: 'reetika1999/ssca-manager:latest'
+          ATTEST_SBOM: true
+          KMS_KEY: 'cosign'
           
