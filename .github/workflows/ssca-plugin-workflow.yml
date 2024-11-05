@@ -14,22 +14,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Run SSCA Plugin Action
         uses: ./ # Uses the action in the root directory of the repository
         with:
-          HARNESS_EXECUTION_ID: '123'
-          HARNESS_ACCOUNT_ID: '123'
-          HARNESS_STAGE_ID: '123'
-          HARNESS_BUILD_ID: '123'
-          HARNESS_PIPELINE_ID: '123'
-          HARNESS_PROJECT_ID: '123'
-          PLUGIN_TOOL: 'Syft'
-          PLUGIN_FORMAT: 'SPDX'
-          PLUGIN_SBOMSOURCE: '/harness/repo'
-          PLUGIN_SBOMDESTINATION: '/harness/sbom'
-          SSCA_SERVICE_Endpoint: 'localhost:8186'
-          SSCA_SERVICE_TOKEN: '123'
-          PLUGIN_TYPE: 'Orchestrate'
-          ATTEST_SBOM: true
-          COSIGN_PASSWORD: '123'
+          HARNESS_ACCOUNT_URL: 'https://qa.harness.io/gateway'
+          HARNESS_ACCOUNT_ID: 'account123'
+          HARNESS_ORG_ID: 'orgId'
+          HARNESS_PROJECT_ID: 'project23'
+          TOOL: 'Syft'
+          FORMAT: 'spdx-json'
+          TARGET: 'reetika1999/ssca-manager:latest'
