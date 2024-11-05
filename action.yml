@@ -38,7 +38,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'harness/ssca-plugin:latest'
+  image: 'harness/ssca-plugin:github'
   env:
     HARNESS_ACCOUNT_URL: ${{ inputs.HARNESS_ACCOUNT_URL }}
     HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
