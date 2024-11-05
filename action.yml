@@ -47,12 +47,12 @@ runs:
     HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
     HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}
     HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
-    PLUGIN_TOOL: ${{ inputs.TOOL }}
-    PLUGIN_FORMAT: ${{ inputs.FORMAT }}
+    SBOM_TOOL: ${{ inputs.TOOL }}
+    SBOM_FORMAT: ${{ inputs.FORMAT }}
     SBOM_SOURCE: ${{ inputs.TARGET }}
     HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
     PLUGIN_TYPE: 'github-orchestrate'
-    SBOM_MODE: 'generation'
+    PLUGIN_MODE: 'generation'
     ATTEST_SBOM: ${{ inputs.ATTEST_SBOM }}
     KMS_PROVIDER: ${{ inputs.KMS_PROVIDER }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
