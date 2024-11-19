@@ -24,9 +24,9 @@ jobs:
         uses: hashicorp/vault-action@v2
         id: vault_login
         with:
-          url: ${{ secrets.VAULT_URL }}  # Your Vault URL
+          url: ${{ secrets.VAULT_URL }}
           method: token
-          token: ${{ secrets.VAULT_TOKEN }}  # Your Vault token
+          token: ${{ secrets.VAULT_TOKEN }}
           
       - name: Set Vault Environment Variables
         run: |
@@ -34,15 +34,15 @@ jobs:
           echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
           
       - name: Run SSCA Plugin Action
-        uses: ./ # Uses the action in the root directory of the repository
+        uses: ./sbom-orchestration
         with:
-          HARNESS_ACCOUNT_URL: 'https://qa.harness.io/gateway'
+          HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io/gateway/ssca-manager'
           HARNESS_ACCOUNT_ID: 'account123'
           HARNESS_ORG_ID: 'orgId'
           HARNESS_PROJECT_ID: 'project23'
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
           TARGET: 'reetika1999/ssca-manager:latest'
-          ATTEST_SBOM: true
+          ATTEST_SBOM: false
           KMS_KEY: 'cosign'
           
