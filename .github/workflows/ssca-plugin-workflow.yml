@@ -37,6 +37,7 @@ jobs:
         uses: ./sbom-orchestration
         with:
           HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io/gateway/ssca-manager'
+          HARNESS_API_KEY: ${{ secrets.HARNESS_API_KEY }}
           HARNESS_ACCOUNT_ID: 'account123'
           HARNESS_ORG_ID: 'orgId'
           HARNESS_PROJECT_ID: 'project23'
