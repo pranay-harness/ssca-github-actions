@@ -38,7 +38,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'harness/ssca-plugin:sbom-slsa'
+  image: 'harness/ssca-plugin:latest'
   entrypoint: '/bin/ssca-plugin'
   args: 
    - github-orchestrate
