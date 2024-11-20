@@ -51,7 +51,6 @@ runs:
     SBOM_TOOL: ${{ inputs.TOOL }}
     SBOM_FORMAT: ${{ inputs.FORMAT }}
     SBOM_SOURCE: ${{ inputs.TARGET }}
-    
     HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
     PLUGIN_TYPE: 'github-orchestrate'
     PLUGIN_MODE: 'generation'
