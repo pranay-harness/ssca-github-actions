@@ -38,7 +38,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'harness/ssca-plugin:github'
+  image: 'harness/ssca-plugin:latest'
   entrypoint: '/bin/ssca-plugin'
   args: 
    - github-orchestrate
@@ -51,6 +51,7 @@ runs:
     SBOM_TOOL: ${{ inputs.TOOL }}
     SBOM_FORMAT: ${{ inputs.FORMAT }}
     SBOM_SOURCE: ${{ inputs.TARGET }}
+    
     HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
     PLUGIN_TYPE: 'github-orchestrate'
     PLUGIN_MODE: 'generation'
