@@ -36,7 +36,7 @@ jobs:
       - name: Run SSCA Plugin Action
         uses: ./sbom-orchestration
         with:
-          HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io/gateway/ssca-manager'
+          HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
           HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
           HARNESS_ACCOUNT_ID: 'account123'
           HARNESS_ORG_ID: 'orgId'
