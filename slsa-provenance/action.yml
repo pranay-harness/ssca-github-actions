@@ -34,7 +34,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'harness/slsa-plugin:github'
-  entrypoint: '/bin/ssca-plugin'
+  entrypoint: '/bin/slsa-plugin'
   args: 
    - github-provenance
   env:
