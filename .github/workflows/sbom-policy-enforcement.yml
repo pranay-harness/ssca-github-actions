@@ -1,4 +1,4 @@
-name: SLSA Provenance Workflow
+name: SBOM Policy Enforcement
 
 on:
   push:
@@ -33,8 +33,8 @@ jobs:
           echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
           echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
           
-      - name: Run SLSA Provenance Action
-        uses: ./slsa-provenance
+      - name: Run SBOM Policy Enforcement Action
+        uses: ./sbom-policy-enforcement
         with:
           HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
           HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
@@ -44,4 +44,4 @@ jobs:
           TARGET: 'reetika1999/ssca-manager:latest'
           ATTEST_SLSA: false
           KMS_KEY: 'cosign'
-          
+          POLICY_SET_REF: 'opa_policy_set_for_at'
