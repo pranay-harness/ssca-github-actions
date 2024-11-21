@@ -1,0 +1,51 @@
+name: 'SLSA Provenance'
+description: 'Github action to generate Provenance'
+author: 'Reetika Mallavarapu'
+inputs:
+  HARNESS_ACCOUNT_URL:
+    description: 'Harness Account Url'
+    required: true
+  HARNESS_ACCOUNT_ID:
+    description: 'Harness Account ID'
+    required: true
+  HARNESS_ORG_ID:
+    description: 'Harness Organization ID'
+    required: true
+  HARNESS_PROJECT_ID:
+    description: 'Harness Project ID'
+    required: true
+  HARNESS_AUTH_TOKEN:
+    description: 'Auth token for authentication with Harness'
+    required: true
+  TARGET:
+    description: 'Image or repo source'
+    required: true
+  ATTEST_SLSA:
+    description: 'If verification is required'
+    type: boolean
+  KMS_PROVIDER:
+    description: 'Kms Provider'
+    required: false
+  KMS_KEY:
+    description: 'Kms Key'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'harness/slsa-plugin:github'
+  entrypoint: '/bin/ssca-plugin'
+  args: 
+   - github-provenance
+  env:
+    HARNESS_ACCOUNT_URL: ${{ inputs.HARNESS_ACCOUNT_URL }}
+    HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
+    HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}
+    HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
+    HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
+    SBOM_SOURCE: ${{ inputs.TARGET }}
+    HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
+    PLUGIN_TYPE: 'github-provenance'
+    ATTEST_SLSA: ${{ inputs.ATTEST_SLSA }}
+    KMS_PROVIDER: ${{ inputs.KMS_PROVIDER }}
+    KMS_KEY: ${{ inputs.KMS_KEY }}
+    POLICY_SET_REF: ${{ inputs.POLICY_SET_REF }}
