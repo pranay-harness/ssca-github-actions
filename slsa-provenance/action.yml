@@ -50,3 +50,4 @@ runs:
     KMS_PROVIDER: ${{ inputs.KMS_PROVIDER }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
     POLICY_SET_REF: ${{ inputs.POLICY_SET_REF }}
+    LOG_LEVEL: 'TRACE'
