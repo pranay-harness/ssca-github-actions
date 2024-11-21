@@ -3,8 +3,8 @@ name: SBOM Policy Enforcement
 on:
   push:
     branches: [main]
-    paths:
-      - 'sbom-policy-enforcement/**'
+    # paths:
+    #   - 'sbom-policy-enforcement/**'
 
 jobs:
   run-ssca-plugin:

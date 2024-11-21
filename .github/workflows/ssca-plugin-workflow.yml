@@ -3,8 +3,8 @@ name: SSCA Plugin Workflow
 on:
   push:
     branches: [main]
-    paths:
-      - 'sbom-orchestration/**'
+    # paths:
+    #   - 'sbom-orchestration/**'
 
 jobs:
   run-ssca-plugin:

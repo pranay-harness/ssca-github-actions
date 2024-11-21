@@ -3,8 +3,8 @@ name: SLSA Provenance Workflow
 on:
   push:
     branches: [main]
-    paths:
-      - 'slsa-provenance/**'
+    # paths:
+    #   - 'slsa-provenance/**'
 
 jobs:
   run-ssca-plugin:
