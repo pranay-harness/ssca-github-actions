@@ -35,13 +35,13 @@ jobs:
         uses: ./sbom-orchestration
         with:
           HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
-          HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
+          HARNESS_API_KEY: ${{ secrets.HARNESS_API_KEY }}
           HARNESS_ACCOUNT_ID: 'v7uYjYGtR4qIZAqh_Z-4DQ'
           HARNESS_ORG_ID: 'SSCA'
           HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
           TARGET: 'reetika1999/ssca-manager:latest'
-          ATTEST_SBOM: false
+          ATTEST: false
           KMS_KEY: 'cosign'
           

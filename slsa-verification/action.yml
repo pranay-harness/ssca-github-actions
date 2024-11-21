@@ -14,18 +14,15 @@ inputs:
   HARNESS_PROJECT_ID:
     description: 'Harness Project ID'
     required: true
-  HARNESS_AUTH_TOKEN:
+  HARNESS_API_KEY:
     description: 'Auth token for authentication with Harness'
     required: true
   TARGET:
     description: 'Image or repo source'
     required: true
-  VERIFY_SLSA:
+  VERIFY:
     description: 'If verification is required'
     type: boolean
-  KMS_PROVIDER:
-    description: 'Kms Provider'
-    required: false
   KMS_KEY:
     description: 'Kms Key'
     required: false
@@ -41,11 +38,10 @@ runs:
     HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
     HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}
     HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
-    HARNESS_API_KEY: ${{ inputs.HARNESS_AUTH_TOKEN }}
+    HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     SLSA_SOURCE: ${{ inputs.TARGET }}
-    HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
+    HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     PLUGIN_TYPE: 'github-slsa-verification'
-    VERIFY_SLSA: ${{ inputs.ATTEST_SLSA }}
-    KMS_PROVIDER: ${{ inputs.KMS_PROVIDER }}
+    VERIFY_SLSA: ${{ inputs.VERIFY }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
     LOG_LEVEL: 'TRACE'
