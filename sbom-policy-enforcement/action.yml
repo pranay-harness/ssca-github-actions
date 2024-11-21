@@ -33,6 +33,7 @@ inputs:
     description: 'Kms Key'
     required: false
 
+
 runs:
   using: 'docker'
   image: 'harness/ssca-plugin:github'
