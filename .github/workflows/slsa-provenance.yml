@@ -1,10 +1,8 @@
 name: SLSA Provenance Workflow
 
-# on:
-#   push:
-#     branches: [main]
-    # paths:
-    #   - 'slsa-provenance/**'
+on:
+  push:
+    branches: [main]
 
 jobs:
   run-ssca-plugin:
@@ -29,7 +27,7 @@ jobs:
       - name: Set Vault Environment Variables
         run: |
           echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
-          echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
+          echo "VAULT_TOKEN=${{ steps.VAULT_TOKEN }}" >> $GITHUB_ENV
           
       - name: Run SLSA Provenance Action
         uses: ./slsa-provenance
@@ -40,6 +38,6 @@ jobs:
           HARNESS_ORG_ID: 'SSCA'
           HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
           TARGET: 'reetika1999/ssca-manager:latest'
-          ATTEST: false
+          ATTEST: true
           KMS_KEY: 'cosign'
           
