@@ -58,3 +58,4 @@ runs:
     ATTEST_SBOM: ${{ inputs.ATTEST_SBOM }}
     KMS_PROVIDER: ${{ inputs.KMS_PROVIDER }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
+    LOG_LEVEL: 'TRACE'
