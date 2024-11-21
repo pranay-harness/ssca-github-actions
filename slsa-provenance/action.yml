@@ -43,7 +43,7 @@ runs:
     HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}
     HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
     HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
-    SBOM_SOURCE: ${{ inputs.TARGET }}
+    SLSA_SOURCE: ${{ inputs.TARGET }}
     HARNESS_AUTH_TOKEN: ${{ inputs.HARNESS_AUTH_TOKEN }}
     PLUGIN_TYPE: 'github-provenance'
     ATTEST_SLSA: ${{ inputs.ATTEST_SLSA }}
