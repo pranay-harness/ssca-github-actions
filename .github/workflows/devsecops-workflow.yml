@@ -12,6 +12,7 @@ jobs:
       HARNESS_ACCOUNT_ID: 'v7uYjYGtR4qIZAqh_Z-4DQ'
       HARNESS_ORG_ID: 'SSCA'
       HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
+      HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
 
     steps:
       # Step 1: Checkout the main repository
@@ -35,7 +36,7 @@ jobs:
       - name: Build and Tag Docker Image
         run: |
           cd docker-nginx
-          docker build -t reetika1999/devsecops:latest .
+          docker build -t reetika1999/devsecops:latest -f ./stable/alpine/Dockerfile .
           echo "Docker image built and tagged as reetika1999/devsecops:latest."
 
       # Step 5: Push the Docker Image to Docker Hub
