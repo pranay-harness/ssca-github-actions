@@ -22,7 +22,8 @@ jobs:
       # Step 2: Clone Additional Repository
       - name: Clone Additional Repository
         run: |
-          git clone https://github.com/reetika04/devsecops-demo.git
+          git clone  https://github.com/nginxinc/docker-nginx.git
+          cd docker-nginx
           echo "Cloned additional repository: devsecops-demo"
 
       # Step 3: Log in to Docker Hub
