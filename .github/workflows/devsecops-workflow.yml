@@ -12,7 +12,7 @@ jobs:
       HARNESS_ACCOUNT_ID: 'v7uYjYGtR4qIZAqh_Z-4DQ'
       HARNESS_ORG_ID: 'SSCA'
       HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
-      HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
+      HARNESS_API_KEY: ${{ secrets.HARNESS_API_KEY }}
 
     steps:
       # Step 1: Checkout the main repository
