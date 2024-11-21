@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
-      HARNESS_AUTH_TOKEN: ${{ secrets.HARNESS_API_KEY }}
       HARNESS_ACCOUNT_ID: 'v7uYjYGtR4qIZAqh_Z-4DQ'
       HARNESS_ORG_ID: 'SSCA'
       HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
@@ -17,14 +16,13 @@ jobs:
     steps:
       # Step 1: Checkout the main repository
       - name: Checkout Main Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Clone Additional Repository
       - name: Clone Additional Repository
         run: |
-          git clone  https://github.com/nginxinc/docker-nginx.git
-          cd docker-nginx
-          echo "Cloned additional repository: devsecops-demo"
+          git clone https://github.com/nginxinc/docker-nginx.git
+          echo "Cloned additional repository: docker-nginx"
 
       # Step 3: Log in to Docker Hub
       - name: Log in to Docker Hub
@@ -36,6 +34,7 @@ jobs:
       # Step 4: Build and Tag Docker Image
       - name: Build and Tag Docker Image
         run: |
+          cd docker-nginx
           docker build -t reetika1999/devsecops:latest .
           echo "Docker image built and tagged as reetika1999/devsecops:latest."
 
