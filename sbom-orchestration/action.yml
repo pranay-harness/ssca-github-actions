@@ -52,4 +52,3 @@ runs:
     PLUGIN_MODE: 'generation'
     ATTEST_SBOM: ${{ inputs.ATTEST }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
-    LOG_LEVEL: 'TRACE'

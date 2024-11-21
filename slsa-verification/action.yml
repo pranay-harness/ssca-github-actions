@@ -43,4 +43,3 @@ runs:
     PLUGIN_TYPE: 'github-slsa-verification'
     VERIFY_SLSA: ${{ inputs.VERIFY }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
-    LOG_LEVEL: 'TRACE'

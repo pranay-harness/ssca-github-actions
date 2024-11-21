@@ -47,4 +47,3 @@ runs:
     VERIFY_SBOM: ${{ inputs.VERIFY }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
     POLICY_SET_REF: ${{ inputs.POLICY_SET_REF }}
-    LOG_LEVEL: 'TRACE'
