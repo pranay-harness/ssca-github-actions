@@ -40,7 +40,6 @@ runs:
     HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
     HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     SLSA_SOURCE: ${{ inputs.TARGET }}
-    HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     PLUGIN_TYPE: 'github-slsa-verification'
     VERIFY_SLSA: ${{ inputs.VERIFY }}
     KMS_KEY: ${{ inputs.KMS_KEY }}

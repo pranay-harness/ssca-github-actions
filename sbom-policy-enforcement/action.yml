@@ -43,7 +43,6 @@ runs:
     HARNESS_PROJECT_ID: ${{ inputs.HARNESS_PROJECT_ID }}
     HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     SBOM_SOURCE: ${{ inputs.TARGET }}
-    HARNESS_API_KEY: ${{ inputs.HARNESS_API_KEY }}
     PLUGIN_TYPE: 'github-enforce'
     VERIFY_SBOM: ${{ inputs.VERIFY }}
     KMS_KEY: ${{ inputs.KMS_KEY }}
