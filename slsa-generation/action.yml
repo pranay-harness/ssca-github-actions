@@ -1,4 +1,4 @@
-name: 'SLSA Generation'
+name: 'SLSA Provenance Generation'
 description: 'Github action to generate SLSA for a given artifact'
 author: 'Reetika Mallavarapu'
 inputs:
