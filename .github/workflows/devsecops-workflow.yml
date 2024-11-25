@@ -62,7 +62,7 @@ jobs:
 
       # Step 8: Run SLSA Provenance Action
       - name: Run SLSA Provenance Action
-        uses: ./slsa-provenance
+        uses: ./slsa-generation
         with:
           TARGET: 'reetika1999/devsecops:latest'
           ATTEST: false
@@ -70,7 +70,7 @@ jobs:
 
       # Step 9: Run SBOM Orchestration Action
       - name: Run SBOM Orchestration Action
-        uses: ./sbom-orchestration
+        uses: ./sbom-generation
         with:
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
