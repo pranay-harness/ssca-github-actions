@@ -1,5 +1,5 @@
-name: 'SBOM Orchestration'
-description: 'Github action to run SBOM Orchestration'
+name: 'SBOM Ingestion'
+description: 'Github action to generate SBOM for a given artifact'
 author: 'Reetika Mallavarapu'
 inputs:
   HARNESS_ACCOUNT_URL:
