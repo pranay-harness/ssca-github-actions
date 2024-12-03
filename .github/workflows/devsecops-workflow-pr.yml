@@ -8,11 +8,11 @@ jobs:
   combined-workflow:
     runs-on: ubuntu-latest
     env:
-      HARNESS_ACCOUNT_URL: 'https://qa.harness.io'
-      HARNESS_ACCOUNT_ID: 'ppbLW9YpRharzPs_JtWT7g'
-      HARNESS_ORG_ID: 'SSCA'
-      HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
-      HARNESS_API_KEY: ${{ secrets.SSCA_QA_API_KEY }}
+      HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
+      HARNESS_ACCOUNT_ID: '9yB4jbMKSCOGKHdX1Idvrg'
+      HARNESS_ORG_ID: 'default'
+      HARNESS_PROJECT_ID: 'SSCA'
+      HARNESS_API_KEY: ${{ secrets.SSCA_PR_API_KEY }}
 
     steps:
       # Step 1: Checkout the main repository
