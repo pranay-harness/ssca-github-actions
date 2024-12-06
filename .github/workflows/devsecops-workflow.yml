@@ -65,7 +65,7 @@ jobs:
         uses: ./slsa-generation
         with:
           TARGET: 'reetika1999/github-service:latest'
-          ATTEST: false
+          ATTEST: true
           KMS_KEY: 'cosign'
 
       # Step 9: Run SBOM Orchestration Action
@@ -75,7 +75,7 @@ jobs:
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
           TARGET: 'reetika1999/github-service:latest'
-          ATTEST: false
+          ATTEST: true
           KMS_KEY: 'cosign'
 
       # Step 10: Run SBOM Policy Enforcement
@@ -83,6 +83,6 @@ jobs:
         uses: ./sbom-policy-enforcement
         with:
           TARGET: 'reetika1999/github-service:latest'
-          VERIFY: false
+          VERIFY: true
           KMS_KEY: 'cosign'
           POLICY_SET_REF: 'opa_policy_set_for_at'
