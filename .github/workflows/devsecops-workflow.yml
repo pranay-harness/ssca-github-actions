@@ -70,6 +70,13 @@ jobs:
           TARGET: 'reetika1999/github-service:latest'
           ATTEST: true
           KMS_KEY: 'cosign'
+          
+      - name: Run SLSA Verification Action
+        uses: ./slsa-verification
+        with:
+          TARGET: 'reetika1999/github-service:latest'
+          VERIFY: true
+          KMS_KEY: 'cosign'
 
       # Step 9: Run SBOM Orchestration Action
       - name: Run SBOM Orchestration Action
