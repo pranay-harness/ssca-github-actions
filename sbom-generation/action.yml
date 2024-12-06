@@ -40,6 +40,7 @@ runs:
   args: 
    - github-orchestrate
   env:
+    ACTION_NAME: 'SBOM Generation'
     HARNESS_ACCOUNT_URL: ${{ inputs.HARNESS_ACCOUNT_URL }}
     HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
     HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}

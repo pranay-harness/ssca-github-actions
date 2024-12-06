@@ -34,6 +34,7 @@ runs:
   args: 
    - github-provenance
   env:
+    ACTION_NAME: 'SLSA Provenance Generation'
     HARNESS_ACCOUNT_URL: ${{ inputs.HARNESS_ACCOUNT_URL }}
     HARNESS_ACCOUNT_ID: ${{ inputs.HARNESS_ACCOUNT_ID }}
     HARNESS_ORG_ID: ${{ inputs.HARNESS_ORG_ID }}
