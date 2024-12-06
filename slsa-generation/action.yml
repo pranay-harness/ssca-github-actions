@@ -29,7 +29,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'harness/slsa-plugin:0.30.1'
+  image: 'harness/slsa-plugin:github'
   entrypoint: '/bin/slsa-plugin'
   args: 
    - github-provenance
