@@ -13,6 +13,7 @@ jobs:
       HARNESS_ORG_ID: 'SSCA'
       HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
       HARNESS_API_KEY: ${{ secrets.SSCA_QA_API_KEY }}
+      VAULT_ADDR: ${{ secrets.VAULT_URL }}
 
     steps:
       # Step 1: Checkout the main repository
@@ -53,12 +54,13 @@ jobs:
           url: ${{ secrets.VAULT_URL }}
           method: token
           token: ${{ secrets.VAULT_TOKEN }}
+          exportToken: true
 
       # Step 7: Set Vault Environment Variables
-      - name: Set Vault Environment Variables
-        run: |
-          echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
-          echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
+      # - name: Set Vault Environment Variables
+      #   run: |
+      #     echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
+      #     echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
 
       # Step 8: Run SLSA Provenance Action
       - name: Run SLSA Provenance Action
