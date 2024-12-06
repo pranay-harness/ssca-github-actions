@@ -14,6 +14,7 @@ jobs:
       HARNESS_PROJECT_ID: 'SSCA_Sanity_Automation'
       HARNESS_API_KEY: ${{ secrets.SSCA_QA_API_KEY }}
       VAULT_ADDR: ${{ secrets.VAULT_URL }}
+      DOCKER_CONFIG: ${{ runner.temp }}/.docker
 
     steps:
       # Step 1: Checkout the main repository
