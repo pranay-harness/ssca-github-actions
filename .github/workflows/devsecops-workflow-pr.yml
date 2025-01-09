@@ -46,20 +46,20 @@ jobs:
           docker push pranaycshah/node-vuln:github-actions
           echo "Docker image pushed to Docker Hub."
 
-      # Step 6: Log in to Vault
-      - name: Log in to Vault
-        uses: hashicorp/vault-action@v2
-        id: vault_login
-        with:
-          url: ${{ secrets.VAULT_URL }}
-          method: token
-          token: ${{ secrets.VAULT_TOKEN }}
+      # # Step 6: Log in to Vault
+      # - name: Log in to Vault
+      #   uses: hashicorp/vault-action@v2
+      #   id: vault_login
+      #   with:
+      #     url: ${{ secrets.VAULT_URL }}
+      #     method: token
+      #     token: ${{ secrets.VAULT_TOKEN }}
 
-      # Step 7: Set Vault Environment Variables
-      - name: Set Vault Environment Variables
-        run: |
-          echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
-          echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
+      # # Step 7: Set Vault Environment Variables
+      # - name: Set Vault Environment Variables
+      #   run: |
+      #     echo "VAULT_ADDR=${{ secrets.VAULT_URL }}" >> $GITHUB_ENV
+      #     echo "VAULT_TOKEN=${{ steps.vault_login.outputs.token }}" >> $GITHUB_ENV
 
       # Step 8: Run SLSA Provenance Action
       - name: Run SLSA Provenance Action
