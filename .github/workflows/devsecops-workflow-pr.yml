@@ -9,10 +9,10 @@ jobs:
   combined-workflow:
     runs-on: ubuntu-latest
     env:
-      HARNESS_ACCOUNT_URL: 'https://reetika.pr2.harness.io'
-      HARNESS_ACCOUNT_ID: 'i2WZnt2VSd6TGp1OCM6jmA'
+      HARNESS_ACCOUNT_URL: 'https://qa.harness.io'
+      HARNESS_ACCOUNT_ID: 'ppbLW9YpRharzPs_JtWT7g'
       HARNESS_ORG_ID: 'default'
-      HARNESS_PROJECT_ID: 'Humanshu'
+      HARNESS_PROJECT_ID: 'Product_Exploratory'
       HARNESS_API_KEY: ${{ secrets.SSCA_PR_API_KEY }}
 
     steps:
