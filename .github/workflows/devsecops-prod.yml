@@ -1,4 +1,4 @@
-name: Combined Workflow for SLSA Provenance, SBOM, and Policy Enforcement
+name: Prod Demo
 
 on:
   workflow_dispatch:
