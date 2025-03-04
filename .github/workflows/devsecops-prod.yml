@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HARNESS_ACCOUNT_URL: 'https://app.harness.io'
-      HARNESS_ACCOUNT_ID: '${{ secrets.account }}'
+      HARNESS_ACCOUNT_ID: 'vpCkHKsDSxK9_KYfjCTMKA'
       HARNESS_ORG_ID: 'default'
-      HARNESS_PROJECT_ID: '${{ secrets.project }}'
+      HARNESS_PROJECT_ID: 'Security_Test_Scans'
       HARNESS_API_KEY: ${{ secrets.SSCA_PR_API_KEY_PROD }}
 
     steps:
