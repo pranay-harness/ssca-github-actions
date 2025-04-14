@@ -37,13 +37,13 @@ jobs:
       - name: Build and Tag Docker Image
         run: |
           cd docker-nginx
-          docker build -t pranaycshah/node-vuln:github-actions -f ./stable/alpine/Dockerfile .
-          echo "Docker image built and tagged as pranaycshah/node-vuln:github-actions."
+          docker build -t pranaycshah/node-vuln:github-actions1 -f ./stable/alpine/Dockerfile .
+          echo "Docker image built and tagged as pranaycshah/node-vuln:github-actions1."
 
       # Step 5: Push the Docker Image to Docker Hub
       - name: Push Docker Image
         run: |
-          docker push pranaycshah/node-vuln:github-actions
+          docker push pranaycshah/node-vuln:github-actions1
           echo "Docker image pushed to Docker Hub."
 
       # # Step 6: Log in to Vault
@@ -65,7 +65,7 @@ jobs:
       - name: Run SLSA Provenance Action
         uses: ./slsa-generation
         with:
-          TARGET: 'pranaycshah/node-vuln:github-actions'
+          TARGET: 'pranaycshah/node-vuln:github-actions1'
           ATTEST: false
           KMS_KEY: 'cosign'
 
@@ -75,7 +75,7 @@ jobs:
         with:
           TOOL: 'Syft'
           FORMAT: 'spdx-json'
-          TARGET: 'pranaycshah/node-vuln:github-actions'
+          TARGET: 'pranaycshah/node-vuln:github-actions1'
           ATTEST: false
           KMS_KEY: 'cosign'
 
